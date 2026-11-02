@@ -141,7 +141,7 @@ LABS = {
 }
 
 INTRO = ("Practice labs (safe, offline puzzles).\n"
-         "Type 'lab 1' to 'lab 6'. In a lab: 'hint' or 'skip'.")
+         "Type 1 to 6. In a lab: 'hint' or 'skip'."
 
 
 def menu():
@@ -157,3 +157,5 @@ def run(arg=None):
         random.choice(list(LABS.values()))[1]()
     else:
         menu()
+if __name__ == "__main__":
+    run()
