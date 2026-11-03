@@ -1,7 +1,7 @@
 """CYBROETHICGRAM AI - Student Learning Assistant (Termux)
 Files needed in the same folder:
   main.py, python_knowledge.py, knowledge_extra.py, programs_library.py,
-  ai_fallback.py, labs.py, progress.py
+  ai_fallback.py, labs.py, progress.py, explain_code.py
 """
 import os
 import random
@@ -12,6 +12,7 @@ import programs_library as pl
 import ai_fallback as ai
 import labs
 import progress
+import explain_code as ex
 from knowledge_extra import EXTRA
 
 pk.KNOWLEDGE.extend(EXTRA)          # add networking, security, ...
@@ -57,7 +58,7 @@ HELP = """Ask me things like:
  ip address / ports / osi model
  ethical hacking / legal labs
  linux commands / termux
-Commands: help, topics, quiz, labs,
+Commands: help, topics, quiz, labs, explain,
  progress, save, save all, exit"""
 
 
@@ -224,6 +225,8 @@ def main():
             n = pl.save_all()
             print(f"Saved {n} programs in the 'programs' folder")
             print("(programs/python and programs/c).")
+        elif low.startswith("explain"):
+            show(ex.find_explain(text))
         elif is_unsafe(low):
             show(REFUSAL)
         elif low == "ai help":

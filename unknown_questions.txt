@@ -25,3 +25,7 @@ explain it line by line
 disable wps
 explain
 ls
+explain
+explain
+17
+exlplain
